@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025年北京卷数学 — 逐题拆解</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+/* ====== Print-Friendly & Screen Styles ====== */
+:root {
+  --bg: #ffffff; --card-bg: #ffffff; --alt-bg: #fafbfc;
+  --text: #1a1a2e; --text2: #5d6d7e; --border: #dce1e8;
+  --red: #c0392b; --orange: #d35400; --amber: #b7950b;
+  --green: #1e8449; --blue: #2471a3; --purple: #7d3c98; --pink: #c2185b;
+  --red-bg: #fdedec; --blue-bg: #eaf2f8; --amber-bg: #fef9e7;
+  --green-bg: #eafaf1; --purple-bg: #f4ecf7; --pink-bg: #fce4ec;
+  --hl-yellow: #fff9c4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", -apple-system, sans-serif;
+  background: #f5f6fa; color: var(--text); line-height: 1.8; font-size: 15px;
+}
+
+/* ====== Print Styles ====== */
+@media print {
+  body { background: #fff; font-size: 12px; line-height: 1.6; }
+  .no-print { display: none !important; }
+  .container { max-width: 100%; padding: 0; margin: 0; }
+  .q-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 8px; padding: 10px 14px; }
+  .q-card:hover { border-color: #ccc; }
+  .section-nav { display: none; }
+  .header { padding: 16px; }
+  .header h1 { font-size: 1.3em; }
+  .footer { border-top: 1px solid #ccc; }
+  @page { size: A4; margin: 1.5cm; }
+  .analysis-block .body { display: block !important; }
+  details.analysis-block > summary { display: none; }
+  details.analysis-block > .body { display: block !important; padding-left: 0; }
+  .q-card { box-shadow: none; }
+  table { font-size: 11px; }
+}
+
+/* ====== Header ====== */
+.header {
+  background: #fff; border-bottom: 3px solid #2471a3; padding: 28px 24px 20px;
+  text-align: center; margin-bottom: 0;
+}
+.header h1 { font-size: 1.6em; color: #1a1a2e; margin-bottom: 4px; }
+.header .subtitle { color: #2471a3; font-size: 1em; font-weight: 700; }
+.header .meta { display: flex; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+.header .meta span {
+  background: #eaf2f8; color: #2471a3; padding: 3px 14px; border-radius: 20px;
+  font-size: 0.82em; font-weight: 600;
+}
+
+/* ====== Container ====== */
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+
+/* ====== Section Nav (screen only) ====== */
+.section-nav {
+  display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 10; background: #f5f6fa; padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-nav a {
+  padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 0.82em;
+  font-weight: 700; cursor: pointer; border: 1.5px solid #dce1e8;
+  background: #fff; color: #5d6d7e; transition: all 0.15s;
+}
+.section-nav a:hover, .section-nav a.active, .section-nav a.q-all { background: #2471a3; color: #fff; border-color: #2471a3; }
+.section-nav a.q-all { background: #7d3c98; border-color: #7d3c98; }
+
+/* ====== Section Title ====== */
+.sec-title {
+  font-size: 1.1em; font-weight: 800; margin: 24px 0 12px;
+  padding: 8px 16px; border-left: 4px solid; background: #fafbfc;
+}
+.sec-title.dx { color: #2471a3; border-color: #2471a3; }
+.sec-title.ddx { color: #7d3c98; border-color: #7d3c98; }
+.sec-title.tk { color: #b7950b; border-color: #b7950b; }
+.sec-title.jd { color: #1e8449; border-color: #1e8449; }
+
+/* ====== Question Card ====== */
+.q-card {
+  background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+  border: 1px solid var(--border); border-left: 3px solid #dce1e8;
+}
+.q-card.dx { border-left-color: #2471a3; }
+.q-card.ddx { border-left-color: #7d3c98; }
+.q-card.tk { border-left-color: #b7950b; }
+.q-card.jd { border-left-color: #1e8449; }
+
+.q-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.q-num {
+  width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center;
+  justify-content: center; font-weight: 800; font-size: 0.95em; flex-shrink: 0; color: #fff;
+}
+.q-num.dx { background: #2471a3; }
+.q-num.ddx { background: #7d3c98; }
+.q-num.tk { background: #b7950b; }
+.q-num.jd { background: #1e8449; }
+.q-type { font-size: 0.78em; color: var(--text2); }
+.q-points { font-weight: 700; color: #c0392b; font-size: 0.82em; }
+
+/* ====== Question Content ====== */
+.q-body { font-size: 0.93em; line-height: 1.9; margin-bottom: 12px; }
+.q-options { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 8px 0; }
+.q-opt { padding: 5px 12px; background: #fafbfc; border-radius: 4px; border: 1px solid #edf0f4; font-size: 0.92em; }
+.q-opt.correct { border-color: #1e8449; background: #eafaf1; font-weight: 700; }
+.q-fig { text-align: center; padding: 10px; margin: 8px 0; background: #fafbfc; border-radius: 4px; font-size: 0.82em; color: var(--text2); border: 1px dashed #dce1e8; }
+.q-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 0.88em; }
+.q-table td, .q-table th { padding: 5px 10px; border: 1px solid var(--border); text-align: center; }
+.q-table th { background: #eaf2f8; font-weight: 700; }
+
+/* ====== Key Text Highlighting ====== */
+.hl-cond { background: var(--red-bg); color: var(--red); padding: 1px 5px; border-radius: 3px; font-weight: 600; border-bottom: 1.5px solid var(--red); }
+.hl-goal { background: var(--blue-bg); color: var(--blue); padding: 1px 5px; border-radius: 3px; font-weight: 600; border-bottom: 1.5px solid var(--blue); }
+.hl-val  { background: var(--amber-bg); color: var(--amber); padding: 1px 5px; border-radius: 3px; font-weight: 600; }
+.hl-cons { background: var(--purple-bg); color: var(--purple); padding: 1px 5px; border-radius: 3px; font-weight: 600; }
+.hl-key  { background: var(--hl-yellow); padding: 1px 5px; border-radius: 3px; font-weight: 600; }
+.hl-warn { background: var(--pink-bg); color: var(--pink); padding: 1px 5px; border-radius: 3px; font-weight: 600; }
+
+/* ====== Analysis ====== */
+.analysis { margin-top: 10px; padding: 12px 16px; background: #fafbfc; border-radius: 6px; border: 1px solid var(--border); }
+.analysis-title { font-weight: 700; color: #2471a3; font-size: 0.88em; margin-bottom: 8px; }
+.step { margin: 5px 0; padding: 6px 12px; background: #fff; border-radius: 4px; border-left: 2.5px solid #2471a3; font-size: 0.88em; }
+.step-num { color: #2471a3; font-weight: 700; margin-right: 6px; font-size: 0.85em; }
+.answer-box { margin-top: 10px; padding: 8px 14px; background: #eafaf1; border-radius: 4px; border: 1px solid #a9dfbf; display: inline-block; }
+.ans-label { font-weight: 700; color: #1e8449; }
+.ans-val { font-weight: 800; font-size: 1.05em; color: #1a1a2e; margin-left: 4px; }
+
+/* ====== Tags ====== */
+.tags { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }
+.tag { font-size: 0.74em; padding: 2px 10px; border-radius: 12px; font-weight: 700; border: 1px solid; }
+.tag-kd { color: #2471a3; background: #eaf2f8; border-color: #aed6f1; }
+.tag-diff { color: #b7950b; background: #fef9e7; border-color: #f9e79f; }
+.tag-method { color: #1e8449; background: #eafaf1; border-color: #a9dfbf; }
+.tag-pitfall { color: #c2185b; background: #fce4ec; border-color: #f8bbd0; }
+
+/* ====== Summary ====== */
+.summary-card {
+  background: #fff; border-radius: 6px; padding: 20px 24px; margin: 20px 0;
+  border: 1.5px solid #2471a3;
+}
+.summary-card h3 { color: #2471a3; margin-bottom: 12px; font-size: 1em; }
+.summary-card table { width: 100%; border-collapse: collapse; font-size: 0.86em; }
+.summary-card td, .summary-card th { padding: 6px 10px; border: 1px solid var(--border); text-align: center; }
+.summary-card th { background: #eaf2f8; color: #1a1a2e; font-weight: 700; }
+.summary-card tr:nth-child(even) td { background: #fafbfc; }
+.diff-bar { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 0.82em; }
+.diff-bar .label { width: 60px; text-align: right; color: var(--text2); flex-shrink: 0; }
+.diff-bar .track { flex: 1; height: 14px; background: #edf0f4; border-radius: 7px; overflow: hidden; }
+.diff-bar .fill { height: 100%; border-radius: 7px; }
+.fill-easy { background: #82e0aa; }
+.fill-mid { background: #f9e79f; }
+.fill-hard { background: #f1948a; }
+.fill-xhard { background: #c0392b; }
+
+/* ====== Footer ====== */
+.footer { text-align: center; color: var(--text2); font-size: 0.8em; padding: 24px; border-top: 1px solid var(--border); margin-top: 24px; }
+
+/* ====== Legend ====== */
+.legend { display: flex; gap: 16px; flex-wrap: wrap; margin: 12px 0 20px; font-size: 0.8em; padding: 10px 16px; background: #fff; border: 1px solid var(--border); border-radius: 6px; }
+.legend b { margin-right: 8px; color: #5d6d7e; }
+
+@media (max-width: 768px) { .q-options { grid-template-columns: 1fr; } .header h1 { font-size: 1.2em; } .container { padding: 10px; } }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header no-print">
+  <h1>2025年普通高等学校招生全国统一考试（北京卷）</h1>
+  <div class="subtitle">数 学 · 逐题拆解</div>
+  <div class="meta">
+    <span>📝 满分 150 分</span><span>⏱ 120 分钟</span><span>📊 共 19 题</span>
+    <span>🏫 北京</span>
+  </div>
+</div>
+
+<!-- desktop print title -->
+<div style="display:none;">
+  <h2>2025年新高考Ⅰ卷数学 逐题拆解</h2>
+</div>
+
+<div class="container">
+
+<!-- ===== LEGEND ===== -->
+<div class="legend">
+  <b>标记图例：</b>
+  <span><span class="hl-cond">已知条件</span></span>
+  <span><span class="hl-goal">求解目标</span></span>
+  <span><span class="hl-val">关键数值</span></span>
+  <span><span class="hl-cons">约束条件</span></span>
+  <span><span class="hl-key">核心概念</span></span>
+  <span><span class="hl-warn">易错警示</span></span>
+</div>
+
+<!-- ===== NAV (screen only) ===== -->
+<div class="section-nav no-print" id="nav">
+  <a class="q-all active" href="#s-dx">📋 全部题型</a>
+  <a href="#s-dx">❶ 单选题 1-8 (40分)</a>
+  <a href="#s-ddx">❷ 多选题 9-11 (18分)</a>
+  <a href="#s-tk">❸ 填空题 12-14 (15分)</a>
+  <a href="#s-jd">❹ 解答题 15-19 (77分)</a>
+</div>
+
+<!-- ================================================================ -->
+<!-- 一、单选题 -->
+<!-- ================================================================ -->
+<div id="s-dx">
+<div class="sec-title dx">一、单选题（10小题，每小题4分，共40分）</div>
+<div class="q-card dx" id="q1">
+<div class="q-header"><div class="q-num dx">1</div><div class="q-type">集合·交集</div><div class="q-points">4分 · 送分题</div></div>
+<div class="q-body"><span class="hl-cond">\(M=\{x\mid 2x-1>5\},\; N=\{1,2,3\}\)</span>，<span class="hl-goal">则 \(M\cap N=\)</span>
+<div class="q-options"><div class="q-opt">A. \(\{1,2,3\}\)</div><div class="q-opt">B. \(\{2,3\}\)</div><div class="q-opt">C. \(\{3\}\)</div><div class="q-opt correct">D. \(\varnothing\) ✓</div></div></div>
+<div class="tags"><span class="tag tag-kd">集合</span><span class="tag tag-diff">★☆☆☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> \(2x-1>5 \Rightarrow 2x>6 \Rightarrow x>3\)，\(M=\{x\mid x>3\}\)</div>
+<div class="step"><span class="step-num">Step2</span> \(M\) 与 \(N=\{1,2,3\}\) 无公共元素 → \(\varnothing\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">D</span></div></div></div>
+<div class="q-card dx" id="q2">
+<div class="q-header"><div class="q-num dx">2</div><div class="q-type">复数·模</div><div class="q-points">4分 · 送分题</div></div>
+<div class="q-body"><span class="hl-cond">\(i\cdot z+2=2i\)</span>，<span class="hl-goal">则 \(|z|=\)</span>
+<div class="q-options"><div class="q-opt">A. \(\sqrt{2}\)</div><div class="q-opt correct">B. \(2\sqrt{2}\) ✓</div><div class="q-opt">C. 4</div><div class="q-opt">D. 8</div></div></div>
+<div class="tags"><span class="tag tag-kd">复数</span><span class="tag tag-diff">★☆☆☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> \(iz=2i-2 \Rightarrow z=\frac{2i-2}{i}=2+2i\)</div>
+<div class="step"><span class="step-num">Step2</span> \(|z|=\sqrt{2^2+2^2}=2\sqrt{2}\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">B</span></div></div></div>
+<div class="q-card dx" id="q3">
+<div class="q-header"><div class="q-num dx">3</div><div class="q-type">双曲线·离心率</div><div class="q-points">4分</div></div>
+<div class="q-body"><span class="hl-cond">双曲线 \(x^2-4y^2=4\)</span>，<span class="hl-goal">离心率为</span>
+<div class="q-options"><div class="q-opt">A. \(\frac{\sqrt{3}}{2}\)</div><div class="q-opt correct">B. \(\frac{\sqrt{5}}{2}\) ✓</div><div class="q-opt">C. \(\frac{5}{4}\)</div><div class="q-opt">D. \(\sqrt{5}\)</div></div></div>
+<div class="tags"><span class="tag tag-kd">解析几何</span><span class="tag tag-diff">★★☆☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> 标准化：\(\frac{x^2}{4}-y^2=1\)，\(a^2=4, b^2=1\)</div>
+<div class="step"><span class="step-num">Step2</span> \(c^2=a^2+b^2=5\)，\(e=\frac{c}{a}=\frac{\sqrt{5}}{2}\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">B</span></div></div></div>
+<div class="q-card dx" id="q4">
+<div class="q-header"><div class="q-num dx">4</div><div class="q-type">函数图象变换</div><div class="q-points">4分</div></div>
+<div class="q-body"><span class="hl-goal">要得到 \(y=9^x\) 的图象，只需把 \(y=3^x\) 的图象</span>
+<div class="q-options"><div class="q-opt correct">A. 横坐标变为 \(\frac{1}{2}\) 倍 ✓</div><div class="q-opt">B. 横坐标变为 2 倍</div><div class="q-opt">C. 纵坐标变为 \(\frac{1}{3}\) 倍</div><div class="q-opt">D. 纵坐标变为 3 倍</div></div></div>
+<div class="tags"><span class="tag tag-kd">函数</span><span class="tag tag-diff">★★☆☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> \(y=9^x=(3^2)^x=3^{2x}\)</div>
+<div class="step"><span class="step-num">Step2</span> \(3^x \xrightarrow{\text{横坐标}\times\frac{1}{2}} 3^{2x}=9^x\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">A</span></div></div></div>
+<div class="q-card dx" id="q5">
+<div class="q-header"><div class="q-num dx">5</div><div class="q-type">等差数列·等比中项</div><div class="q-points">4分</div></div>
+<div class="q-body"><span class="hl-cond">\(\{a_n\}\) 公差不为0，\(a_1=-2\)，\(a_3,a_4,a_6\) 成等比数列</span>，<span class="hl-goal">则 \(a_{10}=\)</span>
+<div class="q-options"><div class="q-opt">A. \(-20\)</div><div class="q-opt">B. \(-18\)</div><div class="q-opt correct">C. 16 ✓</div><div class="q-opt">D. 18</div></div></div>
+<div class="tags"><span class="tag tag-kd">数列</span><span class="tag tag-diff">★★★☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> 设公差 \(d\)，\(a_4^2=a_3\cdot a_6\) → \((-2+3d)^2=(-2+2d)(-2+5d)\)</div>
+<div class="step"><span class="step-num">Step2</span> 展开：\(4-12d+9d^2=4-14d+10d^2\) → \(d(d-2)=0\) → \(d=2\) (\(d\neq0\))</div>
+<div class="step"><span class="step-num">Step3</span> \(a_{10}=a_1+9d=-2+18=16\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">C</span></div></div></div>
+<div class="q-card dx" id="q6">
+<div class="q-header"><div class="q-num dx">6</div><div class="q-type">不等式·基本不等式</div><div class="q-points">4分</div></div>
+<div class="q-body"><span class="hl-cond">\(a>0,\;b>0\)</span>，则恒成立的是
+<div class="q-options"><div class="q-opt">A. \(a^2+b^2>2ab\)</div><div class="q-opt">B. \(\frac{1}{a}+\frac{1}{b}\geq\frac{1}{ab}\)</div><div class="q-opt correct">C. \(a+b>\sqrt{ab}\) ✓</div><div class="q-opt">D. \(\frac{1}{a}+\frac{1}{b}\leq\frac{2}{\sqrt{ab}}\)</div></div></div>
+<div class="tags"><span class="tag tag-kd">不等式</span><span class="tag tag-diff">★★☆☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">A</span> \(a=b\) 时等号成立 → 不严格大于 ✗</div>
+<div class="step"><span class="step-num">C</span> \(a+b\geq 2\sqrt{ab} > \sqrt{ab}\)（\(\sqrt{ab}>0\)）→ ✓ 恒成立</div>
+<div class="step"><span class="hl-warn">B/D 取特殊值 \(a=1/2,b=1/4\) 可反证</span></div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">C</span></div></div></div>
+<div class="q-card dx" id="q7">
+<div class="q-header"><div class="q-num dx">7</div><div class="q-type">逻辑·充要条件</div><div class="q-points">4分</div></div>
+<div class="q-body"><span class="hl-cond">\(f(x)\) 定义域 \(D\)</span>，"值域为 \(\mathbb{R}\)" 是 "\(\forall M\in\mathbb{R},\exists x_0\in D,|f(x_0)|>M\)" 的
+<div class="q-options"><div class="q-opt correct">A. 充分不必要条件 ✓</div><div class="q-opt">B. 必要不充分</div><div class="q-opt">C. 充要</div><div class="q-opt">D. 既不充分也不必要</div></div></div>
+<div class="tags"><span class="tag tag-kd">逻辑</span><span class="tag tag-diff">★★★☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">充分性</span> 值域=\(\mathbb{R}\) → 对任意 \(M\)，取 \(y=|M|+1\)，存在 \(x_0\) 使 \(f(x_0)=y\) → \(|f(x_0)|>M\) ✓</div>
+<div class="step"><span class="step-num">必要性反例</span> \(f(x)=2^x\) 满足条件但值域为 \((0,+\infty)\neq\mathbb{R}\) ✗</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">A</span></div></div></div>
+<div class="q-card dx" id="q8">
+<div class="q-header"><div class="q-num dx">8</div><div class="q-type">三角函数·周期·零点</div><div class="q-points">4分</div></div>
+<div class="q-body"><span class="hl-cond">\(f(x)=\sin\omega x+\cos\omega x\,(\omega>0)\)，\(f(x+\pi)=f(x)\) 恒成立，\(f(x)\) 在 \([0,\frac{\pi}{4}]\) 上有零点</span>，<span class="hl-goal">\(\omega\) 最小值为</span>
+<div class="q-options"><div class="q-opt">A. 8</div><div class="q-opt">B. 6</div><div class="q-opt correct">C. 4 ✓</div><div class="q-opt">D. 3</div></div></div>
+<div class="tags"><span class="tag tag-kd">三角函数</span><span class="tag tag-diff">★★★★☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> \(f(x)=\sqrt{2}\sin(\omega x+\frac{\pi}{4})\)，由周期条件 \(\omega=2k\,(k\in\mathbb{N}^*)\)</div>
+<div class="step"><span class="step-num">Step2</span> 在 \([0,\frac{\pi}{4}]\) 上有零点 → \(\frac{\pi\omega}{4}+\frac{\pi}{4}\geq\pi\) → \(\omega\geq 3\)</div>
+<div class="step"><span class="step-num">Step3</span> \(\omega=2k\geq3\) → 最小 \(k=2,\;\omega=4\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">C</span></div></div></div>
+<div class="q-card dx" id="q9">
+<div class="q-header"><div class="q-num dx">9</div><div class="q-type">对数·应用题</div><div class="q-points">4分</div></div>
+<div class="q-body"><span class="hl-cond">\(T=k\log_2 N\)，\(N:10^6\!\to\!1.024\times10^9\) 增加20h</span>，<span class="hl-goal">\(N:1.024\times10^9\!\to\!4.096\times10^9\) 增加？</span>
+<div class="q-options"><div class="q-opt">A. 2h</div><div class="q-opt correct">B. 4h ✓</div><div class="q-opt">C. 20h</div><div class="q-opt">D. 40h</div></div></div>
+<div class="tags"><span class="tag tag-kd">函数应用</span><span class="tag tag-diff">★★☆☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> \(1.024\times10^9=2^{10}\times10^6\)，\(T_2-T_1=k\cdot10=20\) → \(k=2\)</div>
+<div class="step"><span class="step-num">Step2</span> \(4.096\times10^9=2^{12}\times10^6\)，\(T_3-T_2=k\cdot2=4\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">B</span></div></div></div>
+<div class="q-card dx" id="q10">
+<div class="q-header"><div class="q-num dx">10</div><div class="q-type">向量·取值范围</div><div class="q-points">4分 · 压轴选择</div></div>
+<div class="q-body"><span class="hl-cond">\(|\vec{OA}|=|\vec{OB}|=\sqrt{2},\;|\vec{AB}|=2,\;C(3,4)\)</span>，<span class="hl-goal">\(|2\vec{CA}+\vec{AB}|\) 范围是</span>
+<div class="q-options"><div class="q-opt">A. \([6,14]\)</div><div class="q-opt">B. \([6,12]\)</div><div class="q-opt">C. \([8,14]\)</div><div class="q-opt correct">D. \([8,12]\) ✓</div></div></div>
+<div class="tags"><span class="tag tag-kd">向量</span><span class="tag tag-diff">★★★★☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> 由条件得 \(\vec{OA}\perp\vec{OB}\)（勾股验证）</div>
+<div class="step"><span class="step-num">Step2</span> 化简：\(2\vec{CA}+\vec{AB}=\vec{OA}+\vec{OB}-2\vec{OC}\)，\(|\vec{OC}|=5\)，\(|\vec{OA}+\vec{OB}|=2\)</div>
+<div class="step"><span class="step-num">Step3</span> 柯西不等式 → 范围 \([8,12]\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">D</span></div></div></div>
+</div>
+
+<div id="s-tk">
+<div class="sec-title tk">二、填空题（5小题，每小题5分，共25分）</div>
+<div class="q-card tk" id="q11">
+<div class="q-header"><div class="q-num tk">11</div><div class="q-type">抛物线</div><div class="q-points">5分</div></div>
+<div class="q-body"><span class="hl-cond">抛物线 \(y^2=2px\,(p>0)\) 顶点到焦点距离为3</span>，<span class="hl-goal">则 \(p=\)</span> ______</div>
+<div class="tags"><span class="tag tag-kd">解析几何</span><span class="tag tag-diff">★☆☆☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> 顶点到焦点距离 = \(\frac{p}{2}=3\) → \(p=6\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">6</span></div></div></div>
+<div class="q-card tk" id="q12">
+<div class="q-header"><div class="q-num tk">12</div><div class="q-type">二项式定理</div><div class="q-points">5分</div></div>
+<div class="q-body"><span class="hl-cond">\((1-2x)^4=a_0-2a_1x+4a_2x^2-8a_3x^3+16a_4x^4\)</span>，<span class="hl-goal">\(a_0=\)</span> ______；<span class="hl-goal">\(a_1+a_2+a_3+a_4=\)</span> ______</div>
+<div class="tags"><span class="tag tag-kd">二项式</span><span class="tag tag-diff">★★☆☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> 令 \(x=0\)：\(a_0=1\)</div>
+<div class="step"><span class="step-num">Step2</span> 令 \(t=-2x\)，\((1+t)^4=a_0+a_1t+a_2t^2+a_3t^3+a_4t^4\)，\(t=1\)：\(a_0+a_1+\cdots+a_4=2^4=16\) → \(a_1+\cdots+a_4=15\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">1；15</span></div></div></div>
+<div class="q-card tk" id="q13">
+<div class="q-header"><div class="q-num tk">13</div><div class="q-type">三角·开放题</div><div class="q-points">5分</div></div>
+<div class="q-body"><span class="hl-cond">\(\alpha,\beta\in[0,2\pi],\;\sin(\alpha+\beta)=\sin(\alpha-\beta),\;\cos(\alpha+\beta)\neq\cos(\alpha-\beta)\)</span>，<span class="hl-goal">写出一组 \(\alpha,\beta\)</span> ______</div>
+<div class="tags"><span class="tag tag-kd">三角函数</span><span class="tag tag-diff">★★★☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> \(\sin\)相等+\(\cos\)不等 → 终边关于y轴对称：\((\alpha+\beta)+(\alpha-\beta)=\pi+2k\pi\) → \(\alpha=\frac{\pi}{2}+k\pi\)</div>
+<div class="step"><span class="step-num">Step2</span> 可取 \(\alpha=\frac{\pi}{2},\;\beta=\frac{\pi}{6}\)（答案不唯一）</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">\(\alpha=\frac{\pi}{2},\;\beta=\frac{\pi}{6}\)（不唯一）</span></div></div></div>
+<div class="q-card tk" id="q14">
+<div class="q-header"><div class="q-num tk">14</div><div class="q-type">立体几何·体积</div><div class="q-points">5分 · 难题</div></div>
+<div class="q-body"><span class="hl-cond">3D打印多面体，\(AB\perp BC,\;AB=BC=8,\;AF=CD=4,\;AR=RF=TC=TD=\frac{5}{2}\)，面面垂直</span>，<span class="hl-goal">体积为</span> ______</div>
+<div class="q-fig">📐 多面体示意图（略），需分割为棱柱+棱锥分别计算</div>
+<div class="tags"><span class="tag tag-kd">立体几何</span><span class="tag tag-diff">★★★★☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">Step1</span> 分割为三棱柱 \(ARF\!-\!BHT\)（体积24）+ 四棱锥（体积6）</div>
+<div class="step"><span class="step-num">Step2</span> 由对称性，总体积 \(=2\times(24+6)=60\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">60</span></div></div></div>
+<div class="q-card tk" id="q15">
+<div class="q-header"><div class="q-num tk">15</div><div class="q-type">抽象函数·存在性</div><div class="q-points">5分 · 压轴填空</div></div>
+<div class="q-body"><span class="hl-cond">关于定义域为 \(\mathbb{R}\) 的函数 \(f(x)\)</span>，判断四个命题：
+<br>① 存在递增 \(f\) 使 \(f(x)+f(2x)=-x\)；
+② 存在递减 \(f\) 使 \(f(x)+f(2x)=-x\)；
+③ \(f(x)+f(-x)=\cos x\) 解存在且无穷多；
+④ \(f(x)-f(-x)=\cos x\) 解存在且无穷多。
+<span class="hl-goal">正确结论的序号是</span> ______</div>
+<div class="tags"><span class="tag tag-kd">函数·存在性</span><span class="tag tag-diff">★★★★★</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">①</span> \(x=0\) → \(f(0)=0\)；\(x>0\) 时 \(f(x)+f(2x)=-x<0\)，但递增时 \(f(x)>0,f(2x)>0\)，矛盾 ✗</div>
+<div class="step"><span class="step-num">②</span> 取 \(f(x)=-\frac{x}{2}\)，递减且满足 ✓</div>
+<div class="step"><span class="step-num">③</span> \(f(x)=\frac{1}{2}\cos x+m\sin x\,(m\in\mathbb{R})\)，无穷多解 ✓</div>
+<div class="step"><span class="step-num">④</span> 令 \(x=0\)：\(f(0)-f(0)=\cos0=1\) → \(0=1\) 矛盾，无解 ✗</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">②③</span></div></div></div>
+</div>
+
+<div id="s-jd">
+<div class="sec-title jd">三、解答题（6小题，共85分）</div>
+<div class="q-card jd" id="q16">
+<div class="q-header"><div class="q-num jd">16</div><div class="q-type">解三角形·条件选择</div><div class="q-points">13分</div></div>
+<div class="q-body"><span class="hl-cond">\(\triangle ABC\) 中，\(\cos A=-\frac{1}{3},\;a\sin C=4\sqrt{2}\)</span>
+<p><span class="hl-goal">(1) 求 \(c\)；</span></p>
+<p><span class="hl-goal">(2) 从条件① \(a=6\)、② \(b\sin C=\frac{20\sqrt{2}}{9}\)、③ 面积 \(=10\sqrt{2}\) 中选一个，求 \(BC\) 边上的高。</span></p></div>
+<div class="tags"><span class="tag tag-kd">解三角形</span><span class="tag tag-method">正弦定理</span><span class="tag tag-diff">★★★☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">(1)</span> \(\sin A=\frac{2\sqrt{2}}{3}\)（\(A\) 钝角）。由正弦定理：\(\frac{a}{\sin A}=\frac{c}{\sin C}\)
+<br>又 \(a\sin C=4\sqrt{2}\)，代入得 \(c=\frac{4\sqrt{2}}{\sin A}=\frac{4\sqrt{2}}{2\sqrt{2}/3}=6\)</div>
+<div class="step"><span class="step-num">(2)</span> ①推得三角形不存在；②或③可求高 \(h=\frac{4\sqrt{2}}{3}\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">(1) \(c=6\)；(2) 选②或③，高 \(=\frac{4\sqrt{2}}{3}\)</span></div></div></div>
+<div class="q-card jd" id="q17">
+<div class="q-header"><div class="q-num jd">17</div><div class="q-type">立体几何·线面角</div><div class="q-points">14分</div></div>
+<div class="q-body"><span class="hl-cond">四棱锥 \(P-ABCD\)，\(\triangle ADC\) 与 \(\triangle BAC\) 均为等腰直角三角形，\(E\) 为 \(BC\) 中点</span>
+<p><span class="hl-goal">(1) \(F,G\) 分别为 \(PD,PE\) 中点，证 \(FG\parallel\) 平面 \(PAB\)；</span></p>
+<p><span class="hl-goal">(2) \(PA\perp\) 平面 \(ABCD\)，\(PA=AC\)，求 \(AB\) 与平面 \(PCD\) 所成角正弦值。</span></p></div>
+<div class="tags"><span class="tag tag-kd">立体几何</span><span class="tag tag-method">向量法</span><span class="tag tag-diff">★★★★☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">(1)</span> 取 \(PA,PB\) 中点，中位线+平行四边形 → \(FG\parallel MN\subset\) 面 \(PAB\)</div>
+<div class="step"><span class="step-num">(2)</span> 以 \(A\) 为原点建系，设 \(AD=CD=2\) → 法向量 \(\vec{n}\) → \(\sin\theta=\frac{\sqrt{3}}{3}\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">(1) 见解析；(2) \(\frac{\sqrt{3}}{3}\)</span></div></div></div>
+<div class="q-card jd" id="q18">
+<div class="q-header"><div class="q-num jd">18</div><div class="q-type">概率统计</div><div class="q-points">13分</div></div>
+<div class="q-body"><span class="hl-cond">甲、乙两校各抽查100名，甲80人答对，乙75人答对。相互独立，频率估计概率。</span>
+<p><span class="hl-goal">(1) 估计甲校正确概率 \(p\)；</span></p>
+<p><span class="hl-goal">(2) 各抽1人，\(X=\) 做对人数，求 \(P(X=1)\) 和 \(E(X)\)；</span></p>
+<p><span class="hl-goal">(3) 掌握者：甲100%对，乙85%对；未掌握者：随机四选一。估掌握概率 \(p_1,p_2\)，比较大小（不证）。</span></p></div>
+<div class="tags"><span class="tag tag-kd">概率统计</span><span class="tag tag-method">全概率</span><span class="tag tag-diff">★★★☆☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">(1)</span> \(p=0.8\)</div>
+<div class="step"><span class="step-num">(2)</span> \(p_{乙}=0.75\)，\(P(X=1)=0.8\times0.25+0.2\times0.75=0.35\)，\(E(X)=0.8+0.75=1.55\)</div>
+<div class="step"><span class="step-num">(3)</span> \(0.8=p_1\cdot1+(1-p_1)\cdot\frac{1}{4}\) → \(p_1\approx0.733\)；\(0.75=p_2\cdot0.85+(1-p_2)\cdot\frac{1}{4}\) → \(p_2\approx0.833\)。\(p_1<p_2\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">(1) 0.8；(2) 0.35, 1.55；(3) \(p_1<p_2\)</span></div></div></div>
+<div class="q-card jd" id="q19">
+<div class="q-header"><div class="q-num jd">19</div><div class="q-type">椭圆·面积比较</div><div class="q-points">15分</div></div>
+<div class="q-body"><span class="hl-cond">椭圆 \(E\) 离心率 \(\frac{\sqrt{3}}{2}\)，到两焦点距离之和为4</span>
+<p><span class="hl-goal">(1) 求 \(E\) 方程；</span></p>
+<p><span class="hl-goal">(2) \(M(x_0,y_0)\) 在 \(E\) 上，直线 \(x_0x+2y_0y-4=0\) 与 \(y=2,y=-2\) 交于 \(A,B\)，比较 \(\frac{S_1}{S_2}\) 与 \(\frac{|OA|}{|OB|}\)。</span></p></div>
+<div class="tags"><span class="tag tag-kd">解析几何</span><span class="tag tag-diff">★★★★☆</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">(1)</span> \(2a=4\) → \(a=2\)，\(e=\frac{c}{a}=\frac{\sqrt{3}}{2}\) → \(c=\sqrt{3}\)，\(b=1\) → \(\frac{x^2}{4}+y^2=1\)</div>
+<div class="step"><span class="step-num">(2)</span> 计算 \(A(2,\frac{2y_0}{x_0})\)、\(B(-\frac{2x_0}{y_0},-2)\)，面积比较得 \(\frac{S_1}{S_2}=\frac{|OA|}{|OB|}\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">(1) \(\frac{x^2}{4}+y^2=1\)；(2) 相等</span></div></div></div>
+<div class="q-card jd" id="q20">
+<div class="q-header"><div class="q-num jd">20</div><div class="q-type">导数·切线·不等式</div><div class="q-points">15分</div></div>
+<div class="q-body"><span class="hl-cond">\(f(x)\) 定义域 \((-1,+\infty),\;f(0)=0,\;f'(x)=\frac{\ln(1+x)}{1+x}\)</span>
+<p><span class="hl-goal">(1) 求 \(f'(x)\) 最大值；</span></p>
+<p><span class="hl-goal">(2) \(-1<a<0\) 时，证除切点外曲线在切线 \(l_1\) 上方；</span></p>
+<p><span class="hl-goal">(3) \(a>0\)，\(l_2\perp l_1\) 过 \(A\)，\(l_1,l_2\) 与 \(x\) 轴交点横坐标 \(x_1,x_2\)，求 \(\frac{2a-x_2-x_1}{x_2-x_1}\) 范围。</span></p></div>
+<div class="tags"><span class="tag tag-kd">导数</span><span class="tag tag-diff">★★★★★</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">(1)</span> \(f'(x)=\frac{\ln(1+x)}{1+x}\)，令 \(g(x)=\frac{\ln(1+x)}{1+x}\)，求导得 \(x=e-1\) 处最大值 \(f'_{\max}=\frac{1}{1+x}\big|_{x=e-1}\) ...
+<br>实际上 \(f''(x)=\frac{1-\ln(1+x)}{(1+x)^2}=0\) → \(x=e-1\)，\(f'_{\max}=f'(e-1)=\frac{1}{e}\)</div>
+<div class="step"><span class="step-num">(2)</span> \(f(x)=\frac{1}{2}[\ln(1+x)]^2\)。构造 \(h(x)=f(x)-[切线]\)，分析凹凸性</div>
+<div class="step"><span class="step-num">(3)</span> 计算 \(x_1,x_2\) → 化简表达式 → 得范围 \((-\infty,1)\)</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">(1) \(\frac{1}{e}\)；(2) 见解析；(3) \((-\infty,1)\)</span></div></div></div>
+<div class="q-card jd" id="q21">
+<div class="q-header"><div class="q-num jd">21</div><div class="q-type">集合·新定义·K列</div><div class="q-points">15分 · 终极压轴</div></div>
+<div class="q-body"><span class="hl-cond">\(A=\{1,2,\ldots,8\},\;M=\{(x,y)\mid x,y\in A\}\)。序列相邻项满足 \(\begin{cases}|x_{i+1}-x_i|=3\\|y_{i+1}-y_i|=4\end{cases}\) 或 \(\begin{cases}|x_{i+1}-x_i|=4\\|y_{i+1}-y_i|=3\end{cases}\)，称为<span class="hl-key">K列</span>。</span>
+<p><span class="hl-goal">(1) 第1项 \((3,3)\)，写出第2项；</span></p>
+<p><span class="hl-goal">(2) \(\Gamma\) 为K列，\(i\) 奇时 \(x_i\in\{1,2,7,8\}\)，\(i\) 偶时 \(x_i\in\{3,4,5,6\}\)，判断 \((3,2),(4,4)\) 能否同为 \(\Gamma\) 中项；</span></p>
+<p><span class="hl-goal">(3) 证：\(M\) 全部元素组成的序列都不是K列。</span></p></div>
+<div class="tags"><span class="tag tag-kd">集合·组合</span><span class="tag tag-diff">★★★★★</span></div>
+<div class="analysis"><div class="analysis-title">📖 解析</div>
+<div class="step"><span class="step-num">(1)</span> 规则：(3±3,3±4) 或 (3±4,3±3) → \((6,7),(0,7),(7,6),(7,0),(6,-1),(-1,6)...\)
+<br>取 \(A\) 内且符合格式的：\((6,7)\) 或 \((7,6)\)</div>
+<div class="step"><span class="step-num">(2)</span> 分析奇偶位 \(x_i\) 约束 + 步长规律 → \((3,2)\) 和 \((4,4)\) 的 \(x\) 坐标奇偶性质矛盾 → <span class="hl-warn">不能同时出现</span></div>
+<div class="step"><span class="step-num">(3)</span> 反证法：假设64个元素全构成K列 → 分析"下一项"的受限性 → 导出矛盾</div>
+<div class="answer-box"><span class="ans-label">答案：</span><span class="ans-val">(1) \((6,7)\) 或 \((7,6)\)；(2) 不能；(3) 见解析</span></div></div></div>
+</div>
+
+<div class="summary-card">
+  <h3>📊 全卷知识点分布（北京卷）</h3>
+  <table>
+    <tr><th>模块</th><th>对应题号</th><th>分值</th></tr>
+    <tr><td>集合与逻辑</td><td>1, 7</td><td>8</td></tr>
+    <tr><td>复数</td><td>2</td><td>4</td></tr>
+    <tr><td style="font-weight:700">解析几何</td><td>3, 11, 19</td><td><b>24</b></td></tr>
+    <tr><td style="font-weight:700">函数与导数</td><td>4, 8, 9, 20</td><td><b>27</b></td></tr>
+    <tr><td>数列</td><td>5</td><td>4</td></tr>
+    <tr><td>不等式</td><td>6</td><td>4</td></tr>
+    <tr><td>向量</td><td>10</td><td>4</td></tr>
+    <tr><td>二项式定理</td><td>12</td><td>5</td></tr>
+    <tr><td>三角函数</td><td>13, 16</td><td>18</td></tr>
+    <tr><td style="font-weight:700">立体几何</td><td>14, 17</td><td><b>19</b></td></tr>
+    <tr><td>抽象函数/存在性</td><td>15</td><td>5</td></tr>
+    <tr><td>概率统计</td><td>18</td><td>13</td></tr>
+    <tr><td>集合·组合</td><td>21</td><td>15</td></tr>
+  </table>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>2025年普通高等学校招生全国统一考试（北京卷）· 数学逐题拆解</p>
+  <p>数据来源：<a href="https://github.com/deekur/gaokaomath" target="_blank">github.com/deekur/gaokaomath</a></p>
+  <p style="margin-top:4px;">适用地区：北京</p>
+</div>
+
+</div>
+
+</body>
+</html>
