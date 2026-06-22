@@ -3,148 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>高考数学真题逐题拆解</title>
+<title>Zihui's Lab</title>
 <style>
 :root {
   --bg: #f8f9fb; --card: #fff; --text: #1a1a2e; --text2: #5d6d7e;
   --border: #e1e5eb; --blue: #2471a3; --green: #1e8449; --purple: #7d3c98;
-  --amber: #b7950b;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC",-apple-system,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
 
 .header {
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
-  color: #fff; text-align: center; padding: 48px 20px 36px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #312e81 100%);
+  color: #fff; text-align: center; padding: 60px 20px 48px;
 }
-.header h1 { font-size: 1.8em; font-weight: 800; letter-spacing: 2px; }
-.header p { opacity: 0.75; margin-top: 8px; font-size: 0.95em; }
-.header .badge { display: inline-block; margin-top: 12px; padding: 4px 16px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.82em; }
+.header h1 { font-size: 2em; font-weight: 800; letter-spacing: 3px; }
+.header p { opacity: 0.6; margin-top: 10px; font-size: 0.95em; }
 
-.container { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+.container { max-width: 800px; margin: 0 auto; padding: 28px 16px; }
 
-.year-block { margin-bottom: 28px; }
-.year-title { font-size: 1.2em; font-weight: 800; color: var(--blue); margin-bottom: 10px; padding: 8px 14px; background: #eaf2f8; border-radius: 6px; border-left: 4px solid var(--blue); }
-
-.paper-list { list-style: none; }
-.paper-item {
-  display: flex; align-items: center; gap: 14px; padding: 14px 18px;
-  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
-  margin-bottom: 8px; transition: all 0.15s; text-decoration: none; color: inherit;
+.project-card {
+  display: flex; align-items: center; gap: 18px; padding: 22px 24px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  margin-bottom: 14px; text-decoration: none; color: inherit; transition: all 0.15s;
 }
-a.paper-item:hover { border-color: var(--blue); box-shadow: 0 2px 12px rgba(36,113,163,0.1); transform: translateX(3px); }
-.paper-icon { font-size: 1.6em; flex-shrink: 0; }
-.paper-info { flex: 1; min-width: 0; }
-.paper-info .name { font-weight: 700; font-size: 0.98em; color: var(--text); }
-.paper-info .meta { font-size: 0.78em; color: var(--text2); margin-top: 2px; }
-.paper-status { font-size: 0.75em; padding: 3px 12px; border-radius: 14px; font-weight: 700; flex-shrink: 0; }
-.status-done { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
-.status-soon { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+.project-card:hover { border-color: var(--blue); box-shadow: 0 3px 16px rgba(36,113,163,0.1); transform: translateY(-2px); }
+.project-icon { font-size: 2.2em; flex-shrink: 0; }
+.project-info { flex: 1; }
+.project-info .name { font-weight: 700; font-size: 1.05em; color: var(--text); }
+.project-info .desc { font-size: 0.85em; color: var(--text2); margin-top: 3px; }
+.project-arrow { font-size: 1.2em; color: #ccc; flex-shrink: 0; transition: color 0.15s; }
+.project-card:hover .project-arrow { color: var(--blue); }
 
-.about { margin-top: 36px; padding: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; }
-.about h3 { font-size: 1em; color: var(--blue); margin-bottom: 8px; }
-.about p { font-size: 0.85em; color: var(--text2); }
-.about a { color: var(--blue); }
-
-.footer { text-align: center; color: var(--text2); font-size: 0.78em; padding: 28px; border-top: 1px solid var(--border); margin-top: 20px; }
+.footer { text-align: center; color: var(--text2); font-size: 0.78em; padding: 32px; border-top: 1px solid var(--border); margin-top: 40px; }
 .footer a { color: var(--blue); }
-
-.count-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; border-radius: 11px; font-size: 0.72em; font-weight: 800; background: var(--blue); color: #fff; margin-left: 6px; padding: 0 6px; }
-
-@media print { body { background: #fff; } .header { background: #1a1a2e !important; -webkit-print-color-adjust: exact; } }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>📐 高考数学真题 · 逐题拆解</h1>
-  <p>历年高考数学试卷逐题解析 —— 考点标记 · 思路拆解 · LaTeX 公式渲染 · A4 打印友好</p>
-  <div class="badge">原题数据：github.com/deekur/gaokaomath（1952–2026 全卷档案）</div>
+  <h1>Zihui's Lab</h1>
+  <p>学习资料整理 · 数据可视化 · 工具集合</p>
 </div>
 
 <div class="container">
 
-<!-- 2025 -->
-<div class="year-block">
-  <div class="year-title">2025 年 <span class="count-badge">1</span></div>
-  <ul class="paper-list">
-    <a href="2025-gaokao-math-1.html" class="paper-item">
-      <span class="paper-icon">📄</span>
-      <div class="paper-info">
-        <div class="name">2025年新高考Ⅰ卷（全国Ⅰ卷）数学</div>
-        <div class="meta">适用省份：山东 · 广东 · 湖南 · 湖北 · 河北 · 江苏 · 福建 · 浙江 · 河南 · 江西 · 安徽</div>
-        <div class="meta" style="margin-top:1px;">满分 150 分 · 19 题 · 120 分钟</div>
-      </div>
-      <span class="paper-status status-done">✅ 已拆解</span>
-    </a>
-  </ul>
-</div>
+  <a href="gaokao-math/" class="project-card">
+    <span class="project-icon">📐</span>
+    <div class="project-info">
+      <div class="name">高考数学真题 · 逐题拆解</div>
+      <div class="desc">2016–2025 历年高考数学试卷逐题解析 —— 考点标记 · 思路拆解 · LaTeX 公式 · A4 打印友好</div>
+    </div>
+    <span class="project-arrow">→</span>
+  </a>
 
-<!-- 2024 -->
-<div class="year-block">
-  <div class="year-title">2024 年 <span class="count-badge">0</span></div>
-  <ul class="paper-list">
-    <div class="paper-item" style="opacity:0.5; cursor:default;">
-      <span class="paper-icon">📄</span>
-      <div class="paper-info">
-        <div class="name">2024年新高考Ⅰ卷数学</div>
-        <div class="meta">山东 · 广东 · 湖南 · 湖北 · 河北 · 江苏 · 福建 · 浙江 · 河南 · 江西 · 安徽</div>
-      </div>
-      <span class="paper-status status-soon">⏳ 待拆解</span>
-    </div>
-    <div class="paper-item" style="opacity:0.5; cursor:default;">
-      <span class="paper-icon">📄</span>
-      <div class="paper-info">
-        <div class="name">2024年新高考Ⅱ卷数学</div>
-        <div class="meta">辽宁 · 重庆 · 海南 · 吉林 · 黑龙江 · 山西 · 云南 · 广西 · 甘肃 · 贵州 · 新疆</div>
-      </div>
-      <span class="paper-status status-soon">⏳ 待拆解</span>
-    </div>
-  </ul>
-</div>
-
-<!-- 2023 -->
-<div class="year-block">
-  <div class="year-title">2023 年 <span class="count-badge">0</span></div>
-  <ul class="paper-list">
-    <div class="paper-item" style="opacity:0.5; cursor:default;">
-      <span class="paper-icon">📄</span>
-      <div class="paper-info">
-        <div class="name">2023年新高考Ⅰ卷数学</div>
-        <div class="meta">山东 · 广东 · 湖南 · 湖北 · 河北 · 江苏 · 福建 · 浙江</div>
-      </div>
-      <span class="paper-status status-soon">⏳ 待拆解</span>
-    </div>
-    <div class="paper-item" style="opacity:0.5; cursor:default;">
-      <span class="paper-icon">📄</span>
-      <div class="paper-info">
-        <div class="name">2023年新高考Ⅱ卷数学</div>
-        <div class="meta">辽宁 · 重庆 · 海南 · 安徽 · 吉林 · 黑龙江 · 山西 · 云南</div>
-      </div>
-      <span class="paper-status status-soon">⏳ 待拆解</span>
-    </div>
-  </ul>
-</div>
-
-<div class="about">
-  <h3>📖 关于本项目</h3>
-  <p>
-    所有试卷原始 PDF 来源于 <a href="https://github.com/deekur/gaokaomath" target="_blank">github.com/deekur/gaokaomath</a>（⭐575，收录 1952–2026 年全部高考数学真题）。
-    每份试卷经文本提取后逐题拆解：标注<span style="color:#c0392b;font-weight:600;">已知条件</span>、<span style="color:#2471a3;font-weight:600;">求解目标</span>、<span style="color:#b7950b;font-weight:600;">关键数值</span>和<span style="color:#c2185b;font-weight:600;">易错警示</span>，
-    使用 MathJax 渲染 LaTeX 数学公式。
-    页面适配 A4 纸张打印，可直接 Ctrl+P 输出纸质版。
-  </p>
-</div>
+  <!-- 未来项目在这里添加 ↓ -->
 
 </div>
 
 <div class="footer">
-  <p>高考数学真题逐题拆解 · 持续更新中</p>
-  <p style="margin-top:4px;">
-    <a href="https://github.com/deekur/gaokaomath" target="_blank">原题数据：deekur/gaokaomath</a>
-    &nbsp;·&nbsp;
-    <a href="https://github.com/zihuilin/zihuilin.github.io" target="_blank">项目仓库：zihuilin.github.io</a>
-  </p>
+  <p><a href="https://github.com/zihuilin/zihuilin.github.io" target="_blank">zihuilin.github.io</a></p>
 </div>
 
 </body>

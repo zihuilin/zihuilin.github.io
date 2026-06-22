@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高考数学真题逐题拆解</title>
+<style>
+:root {
+  --bg: #f8f9fb; --card: #fff; --text: #1a1a2e; --text2: #5d6d7e;
+  --border: #e1e5eb; --blue: #2471a3; --green: #1e8449; --amber: #b7950b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "PingFang SC","Microsoft YaHei","Noto Sans SC",-apple-system,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+.header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #312e81 100%);
+  color: #fff; text-align: center; padding: 32px 20px 28px;
+}
+.header h1 { font-size: 1.5em; font-weight: 800; }
+.header .sub { opacity: 0.65; margin-top: 6px; font-size: 0.9em; }
+.header .back { display: inline-block; margin-top: 10px; font-size: 0.8em; color: rgba(255,255,255,0.6); text-decoration: none; }
+.header .back:hover { color: #fff; }
+
+.container { max-width: 960px; margin: 0 auto; padding: 20px 16px; }
+
+.year-block { margin-bottom: 16px; }
+.year-head {
+  font-size: 1.05em; font-weight: 800; padding: 7px 14px; background: #eaf2f8;
+  border-left: 4px solid var(--blue); border-radius: 4px; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 10px;
+}
+.year-head .count { font-size: 0.72em; background: var(--blue); color: #fff; padding: 1px 9px; border-radius: 10px; }
+
+.paper-table { width: 100%; border-collapse: collapse; font-size: 0.86em; }
+.paper-table td { padding: 5px 10px; border-bottom: 1px solid #f0f2f5; }
+.paper-table tr:hover td { background: #fafbfc; }
+.paper-table .pyr { color: var(--text2); font-size: 0.82em; width: 50px; }
+.paper-table .pname { font-weight: 600; }
+.paper-table .pname a { color: var(--blue); text-decoration: none; }
+.paper-table .pname a:hover { text-decoration: underline; }
+.paper-table .pregion { color: var(--text2); font-size: 0.8em; }
+.paper-table .pstatus { text-align: right; white-space: nowrap; }
+.stat-done { color: #1e8449; font-weight: 700; font-size: 0.82em; }
+.stat-pend { color: #b7950b; font-size: 0.8em; }
+
+.legend { margin: 16px 0 24px; font-size: 0.78em; color: var(--text2); display: flex; gap: 18px; }
+
+.about { margin-top: 32px; padding: 18px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; font-size: 0.85em; color: var(--text2); }
+.about a { color: var(--blue); }
+
+.footer { text-align: center; color: var(--text2); font-size: 0.78em; padding: 24px; border-top: 1px solid var(--border); margin-top: 24px; }
+.footer a { color: var(--blue); }
+
+@media print { body { background: #fff; } .header { background: #1a1a2e !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📐 高考数学真题 · 逐题拆解</h1>
+  <div class="sub">2016–2025 历年高考数学试卷 · 考点标记 · LaTeX 渲染 · A4 打印友好</div>
+  <a href="../" class="back">← 返回主入口</a>
+</div>
+
+<div class="container">
+
+<div class="legend">
+  <span><span class="stat-done">✅ 已拆解</span> = 逐题解析已上线</span>
+  <span><span class="stat-pend">⏳ 待拆解</span> = 原卷已有，解析待补充</span>
+  <span>数据来源：<a href="https://github.com/deekur/gaokaomath" target="_blank">deekur/gaokaomath</a></span>
+</div>
+
+<!-- 2025 -->
+<div class="year-block">
+<div class="year-head">2025 年 <span class="count">5 套</span></div>
+<table class="paper-table">
+<tr><td class="pname"><a href="2025-1.html">新高考Ⅰ卷（全国Ⅰ卷）数学</a></td><td class="pregion">山东·广东·湖南·湖北·河北·江苏·福建·浙江·河南·江西·安徽</td><td class="pstatus stat-done">✅ 已拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学</td><td class="pregion">辽宁·重庆·海南·吉林·黑龙江·山西·云南·广西·甘肃·贵州·新疆·四川·内蒙古·陕西·青海·宁夏·西藏</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<!-- 2024 -->
+<div class="year-block">
+<div class="year-head">2024 年 <span class="count">7 套</span></div>
+<table class="paper-table">
+<tr><td class="pname">新高考Ⅰ卷 数学</td><td class="pregion">山东·广东·湖南·湖北·河北·江苏·福建·浙江·河南·江西·安徽</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">新高考Ⅱ卷 数学</td><td class="pregion">辽宁·重庆·海南·吉林·黑龙江·山西·云南·广西·甘肃·贵州·新疆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国甲卷 数学（文）</td><td class="pregion">西藏·四川·内蒙古·陕西·青海·宁夏</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国甲卷 数学（理）</td><td class="pregion">西藏·四川·内蒙古·陕西·青海·宁夏</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<!-- 2023 -->
+<div class="year-block">
+<div class="year-head">2023 年 <span class="count">9 套</span></div>
+<table class="paper-table">
+<tr><td class="pname">新高考Ⅰ卷 数学</td><td class="pregion">山东·广东·湖南·湖北·河北·江苏·福建·浙江</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">新高考Ⅱ卷 数学</td><td class="pregion">辽宁·重庆·海南·安徽·吉林·黑龙江·山西·云南</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国甲卷 数学（文）</td><td class="pregion">广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国甲卷 数学（理）</td><td class="pregion">广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国乙卷 数学（文）</td><td class="pregion">河南·江西·陕西·甘肃·青海·内蒙古·宁夏·新疆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国乙卷 数学（理）</td><td class="pregion">河南·江西·陕西·甘肃·青海·内蒙古·宁夏·新疆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<!-- 2022 -->
+<div class="year-block">
+<div class="year-head">2022 年 <span class="count">9 套</span></div>
+<table class="paper-table">
+<tr><td class="pname">新高考Ⅰ卷 数学</td><td class="pregion">山东·广东·湖南·湖北·河北·江苏·福建</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">新高考Ⅱ卷 数学</td><td class="pregion">海南·辽宁·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国甲卷 数学（文）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国甲卷 数学（理）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国乙卷 数学（文）</td><td class="pregion">河南·山西·江西·安徽·陕西·甘肃·青海·内蒙古·黑龙江·吉林·宁夏·新疆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国乙卷 数学（理）</td><td class="pregion">河南·山西·江西·安徽·陕西·甘肃·青海·内蒙古·黑龙江·吉林·宁夏·新疆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<!-- 2021 -->
+<div class="year-block">
+<div class="year-head">2021 年 <span class="count">9 套</span></div>
+<table class="paper-table">
+<tr><td class="pname">新高考Ⅰ卷 数学</td><td class="pregion">山东·广东·湖南·湖北·河北·江苏·福建</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">新高考Ⅱ卷 数学</td><td class="pregion">海南·辽宁·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国甲卷 数学（文）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国甲卷 数学（理）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国乙卷 数学（文）</td><td class="pregion">河南·山西·江西·安徽·陕西·甘肃·青海·内蒙古·黑龙江·吉林·宁夏·新疆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国乙卷 数学（理）</td><td class="pregion">河南·山西·江西·安徽·陕西·甘肃·青海·内蒙古·黑龙江·吉林·宁夏·新疆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<!-- 2020 -->
+<div class="year-block">
+<div class="year-head">2020 年 <span class="count">12 套</span></div>
+<table class="paper-table">
+<tr><td class="pname">新高考Ⅰ卷 数学</td><td class="pregion">山东</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">新高考Ⅱ卷 数学</td><td class="pregion">海南</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅰ卷 数学（文）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅰ卷 数学（理）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（文）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·宁夏·新疆·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（理）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·宁夏·新疆·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（文）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（理）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">江苏卷 数学</td><td class="pregion">江苏（自主命题末代）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<!-- 2019 -->
+<div class="year-block">
+<div class="year-head">2019 年 <span class="count">11 套</span></div>
+<table class="paper-table">
+<tr><td class="pname">全国Ⅰ卷 数学（文）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建·山东</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅰ卷 数学（理）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建·山东</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（文）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·宁夏·新疆·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（理）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·宁夏·新疆·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（文）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（理）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学（文）</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学（理）</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学（文）</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学（理）</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<!-- 2018 -->
+<div class="year-block">
+<div class="year-head">2018 年 <span class="count">12 套</span></div>
+<table class="paper-table">
+<tr><td class="pname">全国Ⅰ卷 数学（文）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建·山东</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅰ卷 数学（理）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建·山东</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（文）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·宁夏·新疆·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（理）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·宁夏·新疆·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（文）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（理）</td><td class="pregion">云南·广西·贵州·西藏·四川</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学（文）</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学（理）</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学（文）</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学（理）</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">浙江卷 数学</td><td class="pregion">浙江（自主命题）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<!-- 2017 -->
+<div class="year-block">
+<div class="year-head">2017 年 <span class="count">15 套</span></div>
+<table class="paper-table">
+<tr><td class="pname">全国Ⅰ卷 数学（文）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅰ卷 数学（理）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（文）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·海南·宁夏·新疆·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（理）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·海南·宁夏·新疆·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（文）</td><td class="pregion">云南·广西·贵州·四川·西藏</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（理）</td><td class="pregion">云南·广西·贵州·四川·西藏</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学（文）</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学（理）</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学（文）</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学（理）</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">浙江卷 数学</td><td class="pregion">浙江（自主命题）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">山东卷 数学（文）</td><td class="pregion">山东（自主命题末代）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">山东卷 数学（理）</td><td class="pregion">山东（自主命题末代）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">江苏卷 数学</td><td class="pregion">江苏（自主命题）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<!-- 2016 -->
+<div class="year-block">
+<div class="year-head">2016 年 <span class="count">19 套</span></div>
+<table class="paper-table">
+<tr><td class="pname">全国Ⅰ卷 数学（文）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅰ卷 数学（理）</td><td class="pregion">河南·河北·山西·江西·湖北·湖南·广东·安徽·福建</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（文）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·海南·宁夏·新疆·西藏·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅱ卷 数学（理）</td><td class="pregion">甘肃·青海·内蒙古·黑龙江·吉林·辽宁·海南·宁夏·新疆·西藏·陕西·重庆</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（文）</td><td class="pregion">云南·广西·贵州</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">全国Ⅲ卷 数学（理）</td><td class="pregion">云南·广西·贵州</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学（文）</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">北京卷 数学（理）</td><td class="pregion">北京</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学（文）</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">上海卷 数学（理）</td><td class="pregion">上海</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学（文）</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">天津卷 数学（理）</td><td class="pregion">天津</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">浙江卷 数学（文）</td><td class="pregion">浙江（自主命题）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">浙江卷 数学（理）</td><td class="pregion">浙江（自主命题）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">山东卷 数学（文）</td><td class="pregion">山东（自主命题）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">山东卷 数学（理）</td><td class="pregion">山东（自主命题）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">江苏卷 数学</td><td class="pregion">江苏（自主命题）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">四川卷 数学（文）</td><td class="pregion">四川（自主命题末代）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+<tr><td class="pname">四川卷 数学（理）</td><td class="pregion">四川（自主命题末代）</td><td class="pstatus stat-pend">⏳ 待拆解</td></tr>
+</table>
+</div>
+
+<div class="about">
+  <h3>📖 说明</h3>
+  <p>
+    所有试卷原始 PDF 来源于 <a href="https://github.com/deekur/gaokaomath" target="_blank">github.com/deekur/gaokaomath</a>（收录 1952–2026 年全部高考数学真题）。
+    各省份归属以教育部当年划定的考区为准，部分省份在不同年份会切换试卷类型。
+    已拆解的试卷可点击名称进入逐题解析页面；待拆解的试卷 PDF 已存在于源仓库中，解析将陆续补充。
+  </p>
+</div>
+
+</div>
+
+<div class="footer">
+  <p><a href="https://github.com/deekur/gaokaomath" target="_blank">原题数据：deekur/gaokaomath</a> · <a href="https://github.com/zihuilin/zihuilin.github.io" target="_blank">项目仓库</a> · <a href="../">← 返回主入口</a></p>
+</div>
+
+</body>
+</html>
