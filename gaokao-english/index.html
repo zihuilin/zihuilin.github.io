@@ -126,11 +126,16 @@ function esc(s) {
 }
 
 function ww(h) {
-  return h.replace(/\b([a-zA-Z]{2,})\b/g, function(m, w) {
-    var lo = w.toLowerCase();
-    if (V[lo]) return '<span class="w" data-w="' + lo + '">' + w + '</span>';
-    return w;
-  });
+  var parts = h.split(/(【[^】]+】)/g);
+  for (var i = 0; i < parts.length; i++) {
+    if (parts[i].charAt(0) === "【") continue;
+    parts[i] = parts[i].replace(/\b([a-zA-Z]{2,})\b/g, function(m, w) {
+      var lo = w.toLowerCase();
+      if (V[lo]) return '<span class="w" data-w="' + lo + '">' + w + '</span>';
+      return w;
+    });
+  }
+  return parts.join('');
 }
 
 function rc(q) {
